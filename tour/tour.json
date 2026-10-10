@@ -1,0 +1,406 @@
+{
+  "default": {
+    "firstScene": "front_door",
+    "autoLoad": true,
+    "sceneFadeDuration": 600,
+    "showControls": true,
+    "showZoomCtrl": true,
+    "compass": true,
+    "minHfov": 50,
+    "maxHfov": 120,
+    "backgroundColor": [
+      0.11,
+      0.14,
+      0.1
+    ],
+    "escapeHTML": true
+  },
+  "scenes": {
+    "front_door": {
+      "title": "Front door",
+      "type": "equirectangular",
+      "panorama": "../panos/front_door.jpg",
+      "yaw": -90,
+      "pitch": 0,
+      "hfov": 100,
+      "northOffset": 0,
+      "hotSpots": [
+        {
+          "id": "front_door_living",
+          "pitch": -3.1798301198642327,
+          "yaw": -90.0,
+          "type": "scene",
+          "text": "Go to Living & dining",
+          "sceneId": "living",
+          "targetYaw": 140,
+          "targetPitch": 0,
+          "targetHfov": 100
+        }
+      ]
+    },
+    "living": {
+      "title": "Living & dining",
+      "type": "equirectangular",
+      "panorama": "../panos/living.jpg",
+      "yaw": 140,
+      "pitch": 0,
+      "hfov": 100,
+      "northOffset": 0,
+      "hotSpots": [
+        {
+          "id": "living_front_door",
+          "pitch": -6.6970397347629325,
+          "yaw": 106.1134182330893,
+          "type": "scene",
+          "text": "Go to Front door",
+          "sceneId": "front_door",
+          "targetYaw": -90,
+          "targetPitch": 0,
+          "targetHfov": 100
+        },
+        {
+          "id": "living_thai_kitchen",
+          "pitch": -6.967830870102861,
+          "yaw": -90.6365935759635,
+          "type": "scene",
+          "text": "Go to Thai kitchen",
+          "sceneId": "thai_kitchen",
+          "targetYaw": -90,
+          "targetPitch": 0,
+          "targetHfov": 100
+        },
+        {
+          "id": "living_guest_wc",
+          "pitch": -8.31262500731567,
+          "yaw": -50.38931175997341,
+          "type": "scene",
+          "text": "Go to Guest WC",
+          "sceneId": "guest_wc",
+          "targetYaw": -80,
+          "targetPitch": 0,
+          "targetHfov": 100
+        },
+        {
+          "id": "living_hall",
+          "pitch": -6.91229218198297,
+          "yaw": 58.061551083328105,
+          "type": "scene",
+          "text": "Go to Hall",
+          "sceneId": "hall",
+          "targetYaw": 0,
+          "targetPitch": 0,
+          "targetHfov": 100
+        },
+        {
+          "id": "living_gym",
+          "pitch": -8.745530691794391,
+          "yaw": -132.16588898369346,
+          "type": "scene",
+          "text": "Go to Gym",
+          "sceneId": "gym",
+          "targetYaw": 155,
+          "targetPitch": 0,
+          "targetHfov": 100
+        },
+        {
+          "id": "living_gaming_room",
+          "pitch": -8.9261104906114,
+          "yaw": 133.2642954110716,
+          "type": "scene",
+          "text": "Go to Gaming room",
+          "sceneId": "gaming_room",
+          "targetYaw": -35,
+          "targetPitch": 0,
+          "targetHfov": 100
+        }
+      ]
+    },
+    "thai_kitchen": {
+      "title": "Thai kitchen",
+      "type": "equirectangular",
+      "panorama": "../panos/thai_kitchen.jpg",
+      "yaw": -90,
+      "pitch": 0,
+      "hfov": 100,
+      "northOffset": 0,
+      "hotSpots": [
+        {
+          "id": "thai_kitchen_living",
+          "pitch": -13.733006272844644,
+          "yaw": 91.27303002005674,
+          "type": "scene",
+          "text": "Go to Living & dining",
+          "sceneId": "living",
+          "targetYaw": 140,
+          "targetPitch": 0,
+          "targetHfov": 100
+        },
+        {
+          "pitch": -12.983886910674135,
+          "yaw": -146.97613244420336,
+          "type": "info",
+          "text": "Back garden door"
+        }
+      ]
+    },
+    "bedroom": {
+      "title": "Bedroom",
+      "type": "equirectangular",
+      "panorama": "../panos/bedroom.jpg",
+      "yaw": -55,
+      "pitch": 0,
+      "hfov": 100,
+      "northOffset": 0,
+      "hotSpots": [
+        {
+          "id": "bedroom_hall",
+          "pitch": -12.75319579843313,
+          "yaw": 126.63411387596744,
+          "type": "scene",
+          "text": "Go to Hall",
+          "sceneId": "hall",
+          "targetYaw": 0,
+          "targetPitch": 0,
+          "targetHfov": 100
+        },
+        {
+          "id": "bedroom_closet",
+          "pitch": -12.002521826305966,
+          "yaw": -131.08175113593265,
+          "type": "scene",
+          "text": "Go to Walk-in closet",
+          "sceneId": "closet",
+          "targetYaw": 0,
+          "targetPitch": 0,
+          "targetHfov": 100
+        }
+      ]
+    },
+    "closet": {
+      "title": "Walk-in closet",
+      "type": "equirectangular",
+      "panorama": "../panos/closet.jpg",
+      "yaw": 0,
+      "pitch": 0,
+      "hfov": 100,
+      "northOffset": 0,
+      "hotSpots": [
+        {
+          "id": "closet_bedroom",
+          "pitch": -16.31662495090577,
+          "yaw": 154.79887635452494,
+          "type": "scene",
+          "text": "Go to Bedroom",
+          "sceneId": "bedroom",
+          "targetYaw": -55,
+          "targetPitch": 0,
+          "targetHfov": 100
+        },
+        {
+          "id": "closet_bathroom",
+          "pitch": -18.834278927788453,
+          "yaw": -29.744881296942275,
+          "type": "scene",
+          "text": "Go to En-suite bathroom",
+          "sceneId": "bathroom",
+          "targetYaw": -90,
+          "targetPitch": 0,
+          "targetHfov": 100
+        }
+      ]
+    },
+    "bathroom": {
+      "title": "En-suite bathroom",
+      "type": "equirectangular",
+      "panorama": "../panos/bathroom.jpg",
+      "yaw": -90,
+      "pitch": 0,
+      "hfov": 100,
+      "northOffset": 0,
+      "hotSpots": [
+        {
+          "id": "bathroom_closet",
+          "pitch": -24.474232594745985,
+          "yaw": 65.55604521958347,
+          "type": "scene",
+          "text": "Go to Walk-in closet",
+          "sceneId": "closet",
+          "targetYaw": 0,
+          "targetPitch": 0,
+          "targetHfov": 100
+        }
+      ]
+    },
+    "guest_wc": {
+      "title": "Guest WC",
+      "type": "equirectangular",
+      "panorama": "../panos/guest_wc.jpg",
+      "yaw": -80,
+      "pitch": 0,
+      "hfov": 100,
+      "northOffset": 0,
+      "hotSpots": [
+        {
+          "id": "guest_wc_living",
+          "pitch": -28.111454829304588,
+          "yaw": 150.94539590092285,
+          "type": "scene",
+          "text": "Go to Living & dining",
+          "sceneId": "living",
+          "targetYaw": 140,
+          "targetPitch": 0,
+          "targetHfov": 100
+        }
+      ]
+    },
+    "gaming_room": {
+      "title": "Gaming room",
+      "type": "equirectangular",
+      "panorama": "../panos/gaming_room.jpg",
+      "yaw": -35,
+      "pitch": 0,
+      "hfov": 100,
+      "northOffset": 0,
+      "hotSpots": [
+        {
+          "id": "gaming_room_living",
+          "pitch": -14.04670041426001,
+          "yaw": 17.198541220065866,
+          "type": "scene",
+          "text": "Go to Living & dining",
+          "sceneId": "living",
+          "targetYaw": 140,
+          "targetPitch": 0,
+          "targetHfov": 100
+        }
+      ]
+    },
+    "gym": {
+      "title": "Gym",
+      "type": "equirectangular",
+      "panorama": "../panos/gym.jpg",
+      "yaw": 155,
+      "pitch": 0,
+      "hfov": 100,
+      "northOffset": 0,
+      "hotSpots": [
+        {
+          "id": "gym_living",
+          "pitch": -14.672414375337112,
+          "yaw": -1.3639275316029371,
+          "type": "scene",
+          "text": "Go to Living & dining",
+          "sceneId": "living",
+          "targetYaw": 140,
+          "targetPitch": 0,
+          "targetHfov": 100
+        }
+      ]
+    },
+    "hall": {
+      "title": "Hall",
+      "type": "equirectangular",
+      "panorama": "../panos/hall.jpg",
+      "yaw": 0,
+      "pitch": 0,
+      "hfov": 100,
+      "northOffset": 0,
+      "hotSpots": [
+        {
+          "id": "hall_living",
+          "pitch": -12.907408671265838,
+          "yaw": 180.0,
+          "type": "scene",
+          "text": "Go to Living & dining",
+          "sceneId": "living",
+          "targetYaw": 140,
+          "targetPitch": 0,
+          "targetHfov": 100
+        },
+        {
+          "id": "hall_bedroom",
+          "pitch": -19.091976497434217,
+          "yaw": -155.85445803957836,
+          "type": "scene",
+          "text": "Go to Bedroom",
+          "sceneId": "bedroom",
+          "targetYaw": -55,
+          "targetPitch": 0,
+          "targetHfov": 100
+        },
+        {
+          "id": "hall_connector",
+          "pitch": -39.90622874141372,
+          "yaw": 81.25383773744483,
+          "type": "scene",
+          "text": "Go to Covered connector",
+          "sceneId": "connector",
+          "targetYaw": 90,
+          "targetPitch": 0,
+          "targetHfov": 100
+        }
+      ]
+    },
+    "connector": {
+      "title": "Covered connector",
+      "type": "equirectangular",
+      "panorama": "../panos/connector.jpg",
+      "yaw": 90,
+      "pitch": 0,
+      "hfov": 100,
+      "northOffset": 0,
+      "hotSpots": [
+        {
+          "id": "connector_hall",
+          "pitch": -19.53665493812838,
+          "yaw": -90.0,
+          "type": "scene",
+          "text": "Go to Hall",
+          "sceneId": "hall",
+          "targetYaw": 0,
+          "targetPitch": 0,
+          "targetHfov": 100
+        },
+        {
+          "id": "connector_workshop",
+          "pitch": -30.81855950397062,
+          "yaw": -12.528807709151463,
+          "type": "scene",
+          "text": "Go to Workshop",
+          "sceneId": "workshop",
+          "targetYaw": 40,
+          "targetPitch": 0,
+          "targetHfov": 100
+        },
+        {
+          "pitch": -20.772254682045844,
+          "yaw": 90.0,
+          "type": "info",
+          "text": "Existing house \u00b7 context exterior"
+        }
+      ]
+    },
+    "workshop": {
+      "title": "Workshop",
+      "type": "equirectangular",
+      "panorama": "../panos/workshop.jpg",
+      "yaw": 40,
+      "pitch": 0,
+      "hfov": 100,
+      "northOffset": 0,
+      "hotSpots": [
+        {
+          "id": "workshop_connector",
+          "pitch": -14.676393137450017,
+          "yaw": 180.0,
+          "type": "scene",
+          "text": "Go to Covered connector",
+          "sceneId": "connector",
+          "targetYaw": 90,
+          "targetPitch": 0,
+          "targetHfov": 100
+        }
+      ]
+    }
+  }
+}

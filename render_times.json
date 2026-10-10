@@ -1,0 +1,299 @@
+{
+  "plan_check": {
+    "seconds": 5.53,
+    "resolution": [
+      4400,
+      4000
+    ],
+    "samples": 16,
+    "file": "plan_check.png"
+  },
+  "clay_aerial": {
+    "seconds": 7.9,
+    "resolution": [
+      1600,
+      1200
+    ],
+    "samples": 48,
+    "file": "clay_aerial.png"
+  },
+  "clay_cutaway": {
+    "seconds": 7.75,
+    "resolution": [
+      1600,
+      1200
+    ],
+    "samples": 48,
+    "file": "clay_cutaway.png"
+  },
+  "living_test": {
+    "seconds": 10.42,
+    "resolution": [
+      1280,
+      720
+    ],
+    "samples": 96,
+    "file": "living_test.png"
+  },
+  "still_front_door": {
+    "seconds": 18.7,
+    "resolution": [
+      1920,
+      1080
+    ],
+    "samples": 256,
+    "file": "stills\\front_door.png"
+  },
+  "still_living": {
+    "seconds": 23.05,
+    "resolution": [
+      1920,
+      1080
+    ],
+    "samples": 256,
+    "file": "stills\\living.png"
+  },
+  "still_thai_kitchen": {
+    "seconds": 18.23,
+    "resolution": [
+      1920,
+      1080
+    ],
+    "samples": 256,
+    "file": "stills\\thai_kitchen.png"
+  },
+  "still_bedroom": {
+    "seconds": 22.49,
+    "resolution": [
+      1920,
+      1080
+    ],
+    "samples": 256,
+    "file": "stills\\bedroom.png"
+  },
+  "still_closet": {
+    "seconds": 20.99,
+    "resolution": [
+      1920,
+      1080
+    ],
+    "samples": 256,
+    "file": "stills\\closet.png"
+  },
+  "still_bathroom": {
+    "seconds": 27.34,
+    "resolution": [
+      1920,
+      1080
+    ],
+    "samples": 256,
+    "file": "stills\\bathroom.png"
+  },
+  "still_gaming_room": {
+    "seconds": 20.56,
+    "resolution": [
+      1920,
+      1080
+    ],
+    "samples": 256,
+    "file": "stills\\gaming_room.png"
+  },
+  "still_gym": {
+    "seconds": 19.53,
+    "resolution": [
+      1920,
+      1080
+    ],
+    "samples": 256,
+    "file": "stills\\gym.png"
+  },
+  "still_hall": {
+    "seconds": 23.33,
+    "resolution": [
+      1920,
+      1080
+    ],
+    "samples": 256,
+    "file": "stills\\hall.png"
+  },
+  "still_guest_wc": {
+    "seconds": 24.79,
+    "resolution": [
+      1920,
+      1080
+    ],
+    "samples": 256,
+    "file": "stills\\guest_wc.png"
+  },
+  "still_connector": {
+    "seconds": 20.57,
+    "resolution": [
+      1920,
+      1080
+    ],
+    "samples": 256,
+    "file": "stills\\connector.png"
+  },
+  "still_workshop": {
+    "seconds": 18.53,
+    "resolution": [
+      1920,
+      1080
+    ],
+    "samples": 256,
+    "file": "stills\\workshop.png"
+  },
+  "still_gaming_room_reverse": {
+    "seconds": 20.08,
+    "resolution": [
+      1920,
+      1080
+    ],
+    "samples": 256,
+    "file": "stills\\gaming_room_reverse.png"
+  },
+  "still_bathroom_overview": {
+    "seconds": 26.64,
+    "resolution": [
+      1920,
+      1080
+    ],
+    "samples": 256,
+    "file": "stills\\bathroom_overview.png"
+  },
+  "still_thai_kitchen_overview": {
+    "seconds": 17.77,
+    "resolution": [
+      1920,
+      1080
+    ],
+    "samples": 256,
+    "file": "stills\\thai_kitchen_overview.png"
+  },
+  "exterior_aerial": {
+    "seconds": 10.08,
+    "resolution": [
+      1920,
+      1080
+    ],
+    "samples": 256,
+    "file": "exterior_aerial.png"
+  },
+  "exterior_street": {
+    "seconds": 13.59,
+    "resolution": [
+      1920,
+      1080
+    ],
+    "samples": 256,
+    "file": "exterior_street.png"
+  },
+  "pano_front_door": {
+    "seconds": 25.77,
+    "resolution": [
+      4096,
+      2048
+    ],
+    "samples": 128,
+    "file": "panos\\front_door.png"
+  },
+  "pano_living": {
+    "seconds": 42.4,
+    "resolution": [
+      4096,
+      2048
+    ],
+    "samples": 128,
+    "file": "panos\\living.png"
+  },
+  "pano_thai_kitchen": {
+    "seconds": 32.39,
+    "resolution": [
+      4096,
+      2048
+    ],
+    "samples": 128,
+    "file": "panos\\thai_kitchen.png"
+  },
+  "pano_bedroom": {
+    "seconds": 42.36,
+    "resolution": [
+      4096,
+      2048
+    ],
+    "samples": 128,
+    "file": "panos\\bedroom.png"
+  },
+  "pano_closet": {
+    "seconds": 37.69,
+    "resolution": [
+      4096,
+      2048
+    ],
+    "samples": 128,
+    "file": "panos\\closet.png"
+  },
+  "pano_bathroom": {
+    "seconds": 44.63,
+    "resolution": [
+      4096,
+      2048
+    ],
+    "samples": 128,
+    "file": "panos\\bathroom.png"
+  },
+  "pano_guest_wc": {
+    "seconds": 43.16,
+    "resolution": [
+      4096,
+      2048
+    ],
+    "samples": 128,
+    "file": "panos\\guest_wc.png"
+  },
+  "pano_gaming_room": {
+    "seconds": 37.2,
+    "resolution": [
+      4096,
+      2048
+    ],
+    "samples": 128,
+    "file": "panos\\gaming_room.png"
+  },
+  "pano_gym": {
+    "seconds": 34.83,
+    "resolution": [
+      4096,
+      2048
+    ],
+    "samples": 128,
+    "file": "panos\\gym.png"
+  },
+  "pano_hall": {
+    "seconds": 42.35,
+    "resolution": [
+      4096,
+      2048
+    ],
+    "samples": 128,
+    "file": "panos\\hall.png"
+  },
+  "pano_connector": {
+    "seconds": 30.93,
+    "resolution": [
+      4096,
+      2048
+    ],
+    "samples": 128,
+    "file": "panos\\connector.png"
+  },
+  "pano_workshop": {
+    "seconds": 32.41,
+    "resolution": [
+      4096,
+      2048
+    ],
+    "samples": 128,
+    "file": "panos\\workshop.png"
+  }
+}

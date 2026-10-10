@@ -1,0 +1,161 @@
+{
+  "reference": "User brief sections 5.1 and 5.2, supplied 2026-10-11",
+  "wall_checks": [
+    {
+      "wall": "North",
+      "max_dimension_error_m": 3.8146972691777137e-07,
+      "section_samples": 2576,
+      "section_mismatches": 0,
+      "openings": 2,
+      "pass": true
+    },
+    {
+      "wall": "South",
+      "max_dimension_error_m": 7.629394531138978e-07,
+      "section_samples": 2576,
+      "section_mismatches": 0,
+      "openings": 2,
+      "pass": true
+    },
+    {
+      "wall": "West",
+      "max_dimension_error_m": 3.8146972691777137e-07,
+      "section_samples": 3808,
+      "section_mismatches": 0,
+      "openings": 4,
+      "pass": true
+    },
+    {
+      "wall": "East",
+      "max_dimension_error_m": 7.629394531138978e-07,
+      "section_samples": 3808,
+      "section_mismatches": 0,
+      "openings": 4,
+      "pass": true
+    },
+    {
+      "wall": "LivingNorth",
+      "max_dimension_error_m": 8.392333984419409e-07,
+      "section_samples": 2520,
+      "section_mismatches": 0,
+      "openings": 2,
+      "pass": true
+    },
+    {
+      "wall": "BathWC",
+      "max_dimension_error_m": 8.392333984419409e-07,
+      "section_samples": 616,
+      "section_mismatches": 0,
+      "openings": 0,
+      "pass": true
+    },
+    {
+      "wall": "BathCloset",
+      "max_dimension_error_m": 8.392333984419409e-07,
+      "section_samples": 1344,
+      "section_mismatches": 0,
+      "openings": 1,
+      "pass": true
+    },
+    {
+      "wall": "ClosetBedroom",
+      "max_dimension_error_m": 8.392333984419409e-07,
+      "section_samples": 1344,
+      "section_mismatches": 0,
+      "openings": 1,
+      "pass": true
+    },
+    {
+      "wall": "BedroomHall",
+      "max_dimension_error_m": 8.392333984419409e-07,
+      "section_samples": 1344,
+      "section_mismatches": 0,
+      "openings": 1,
+      "pass": true
+    },
+    {
+      "wall": "LivingSouth",
+      "max_dimension_error_m": 1.0681152343705591e-06,
+      "section_samples": 2520,
+      "section_mismatches": 0,
+      "openings": 2,
+      "pass": true
+    },
+    {
+      "wall": "GymGaming",
+      "max_dimension_error_m": 8.392333984419409e-07,
+      "section_samples": 1176,
+      "section_mismatches": 0,
+      "openings": 0,
+      "pass": true
+    },
+    {
+      "wall": "KitchenNorth",
+      "max_dimension_error_m": 7.629394531138978e-07,
+      "section_samples": 1288,
+      "section_mismatches": 0,
+      "openings": 1,
+      "pass": true
+    },
+    {
+      "wall": "KitchenWest",
+      "max_dimension_error_m": 3.8146972691777137e-07,
+      "section_samples": 1064,
+      "section_mismatches": 0,
+      "openings": 1,
+      "pass": true
+    },
+    {
+      "wall": "KitchenSouth",
+      "max_dimension_error_m": 7.629394531138978e-07,
+      "section_samples": 1288,
+      "section_mismatches": 0,
+      "openings": 2,
+      "pass": true
+    },
+    {
+      "wall": "WorkshopNorth",
+      "max_dimension_error_m": 7.629394538355427e-07,
+      "section_samples": 756,
+      "section_mismatches": 0,
+      "openings": 1,
+      "pass": true
+    },
+    {
+      "wall": "WorkshopSouth",
+      "max_dimension_error_m": 7.629394538355427e-07,
+      "section_samples": 756,
+      "section_mismatches": 0,
+      "openings": 1,
+      "pass": true
+    },
+    {
+      "wall": "WorkshopWest",
+      "max_dimension_error_m": 7.629394531138978e-07,
+      "section_samples": 1120,
+      "section_mismatches": 0,
+      "openings": 0,
+      "pass": true
+    },
+    {
+      "wall": "WorkshopEast",
+      "max_dimension_error_m": 7.629394531138978e-07,
+      "section_samples": 1120,
+      "section_mismatches": 0,
+      "openings": 0,
+      "pass": true
+    }
+  ],
+  "max_error_m": 1.0681152343705591e-06,
+  "wall_and_opening_table_pass": true,
+  "furniture_wall_bbox_overlaps": [],
+  "open_door_leaf_bbox_overlaps": [],
+  "missing_referenced_textures": [],
+  "barbell_length_m": 2.1999998092651367,
+  "barbell_west_wall_face_clearance_m": 0.40000000000000036,
+  "barbell_east_wall_face_clearance_m": 1.0400001907348635,
+  "barbell_and_plates_south_wall_face_clearance_m": 1.4050006866455078,
+  "ceiling_height_m": 2.8,
+  "kitchen_has_horizontal_ceiling": false,
+  "scope": "Exact wall axes/thicknesses/extents and sampled wall sections; conservative furniture bounding-box checks plus visual inspection, not a construction/structural certificate."
+}
