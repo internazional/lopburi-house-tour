@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#293c31">
+  <meta name="description" content="Walk continuously through the actual Lopburi house model at eye level. Touch controls, accurate metres, room dimensions and a live plan.">
+  <title>Walk inside · Lopburi house</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main id="viewer" aria-label="Continuous 3D house walkthrough">
+    <canvas id="view" aria-label="House view. Drag to look around." tabindex="0"></canvas>
+    <header class="topbar">
+      <a class="brand" href="../index.html"><span class="brand-mark">L.</span><span>Lopburi house<small>Walk inside</small></span></a>
+      <nav aria-label="House views"><a href="../index.html">360°</a><a href="../photos.html">Photos</a><button id="plan-button" type="button">Plan</button></nav>
+    </header>
+    <section class="room-card" aria-label="Current room">
+      <div class="eyebrow">YOU ARE IN</div>
+      <h1 id="room-name">Living & dining</h1>
+      <p id="room-size">Preparing your house…</p>
+      <p class="subtle" id="room-area">Eye level 1.60 m</p>
+    </section>
+    <div class="tools">
+      <label class="sr-only" for="room-select">Start in a room</label>
+      <select id="room-select" disabled><option value="living">Start in a room</option></select>
+      <button id="grid-button" type="button" aria-pressed="false" disabled>1 m grid</button>
+      <button id="help-button" type="button" aria-label="How to walk">?</button>
+      <button id="mouse-button" type="button" class="desktop-only" disabled>Mouse look</button>
+    </div>
+    <div id="crosshair" aria-hidden="true"></div>
+    <div class="movement" id="move-controls" aria-label="Movement controls">
+      <div class="joystick" id="joystick" role="group" aria-label="Movement joystick. Drag up to walk forward, down to go back, left or right to move sideways.">
+        <span class="joystick-arrow up">↑</span><span class="joystick-arrow down">↓</span><span class="joystick-arrow left">←</span><span class="joystick-arrow right">→</span>
+        <span id="joystick-knob" aria-hidden="true"></span>
+      </div>
+      <span class="control-label">MOVE</span>
+    </div>
+    <div class="look-hint" aria-hidden="true"><span>↔</span>Drag view<br>to look</div>
+    <div class="walk-status" id="walk-status" role="status">Loading the 3D model…</div>
+    <div class="keyboard-hint desktop-only">W A S D / arrow keys to walk · drag to look</div>
+    <div class="loading-overlay" id="loading">
+      <div class="welcome">
+        <span class="eyebrow">YOUR HOUSE · AT EYE LEVEL</span>
+        <h2>Step inside.</h2>
+        <p>Walk through every doorway. See the space change as you move.</p>
+        <div class="instructions"><span><b>← →</b>Left thumb to move</span><span><b>↔</b>Drag the view to look</span></div>
+        <progress id="progress" max="100" value="0" aria-label="House loading progress"></progress>
+        <p class="load-text" id="load-text">Loading the house…</p>
+        <button id="start-button" type="button" disabled>Preparing house…</button>
+        <p class="small-note">Real room sizes · 1.60 m eye height<br>Landscape gives you a wider view.</p>
+        <a class="fallback" href="../index.html">Open the rendered 360° tour</a>
+      </div>
+    </div>
+  </main>
+  <dialog id="plan-dialog" aria-labelledby="plan-title">
+    <div class="dialog-header"><div><span class="eyebrow">YOUR POSITION, LIVE</span><h2 id="plan-title">The house plan.</h2></div><button id="close-plan" type="button" aria-label="Close plan">×</button></div>
+    <div class="map-tools"><span>Drag the plan to move around</span><button id="plan-zoom-out" type="button" aria-label="Zoom out on plan">−</button><button id="plan-zoom-in" type="button" aria-label="Zoom in on plan">+</button><button id="plan-fit" type="button">Whole plan</button></div>
+    <div id="plan-map" aria-label="Live house plan with your position"></div>
+    <p class="map-key"><span class="map-dot"></span>You are here · arrow shows where you’re looking</p>
+    <p id="plan-size"></p>
+    <p class="small-note">Room labels show clear dimensions between wall faces. Plan areas in the room card follow the supplied wall-centreline dimensions.</p>
+    <a href="../plan_check.png" target="_blank" rel="noopener">Open the full rendered plan ↗</a>
+  </dialog>
+  <dialog id="help-dialog" aria-labelledby="help-title">
+    <div class="dialog-header"><h2 id="help-title">Make yourself at home.</h2><button id="close-help" type="button" aria-label="Close help">×</button></div>
+    <p><b>On your phone:</b> drag the round control with your left thumb to walk. Drag anywhere on the house view with your right thumb to look around. You can do both together.</p>
+    <p><b>On a computer:</b> use W A S D or the arrow keys to walk and drag the view to look. Mouse look follows your mouse; Esc releases it.</p>
+    <p>Walk through doorways and around furniture. Use “Start in a room” if you want to go straight to a particular space.</p>
+    <p><b>To judge size:</b> the model uses real metres, a 1.60 m eye height and a consistent perspective. “1 m grid” adds metre squares to the floor; the room card shows the clear dimensions inside the walls.</p>
+    <p class="small-note">Lighting, reflections and detailed planting are simplified for real-time movement. For the finished appearance, open the rendered photos or 360° tour.</p>
+    <a href="../tour/credits.html">Assets & scene notes ↗</a>
+  </dialog>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
