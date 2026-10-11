@@ -1,0 +1,436 @@
+LOPBURI HOUSE — HANDOVER FOR CLAUDE
+Prepared: 11 October 2026
+Owner: Christophe
+
+COPY THIS STARTING REQUEST INTO CLAUDE
+
+Continue my Lopburi house project. Read CLAUDE_HANDOVER.txt and brief.txt in
+C:\Codex Projects\Lopburi-House before doing anything. There are two working
+versions: a Blender/Cycles scene with photographs and a 360 room tour, and a
+continuous 3D browser walkthrough. Keep both working. Preserve the supplied
+layout and real metre scale unless I explicitly request a layout change.
+Everything belongs in this separate house folder and, for the website, the
+internazional/lopburi-house-tour repository. Put nothing in Astra, locally or
+on GitHub. Inspect the actual files before making changes; report what you
+verified and any remaining limits. If I have not requested a specific change,
+first confirm you understand the project and wait for my next instruction.
+
+
+1. WHAT ALREADY EXISTS
+
+Photo/360 room tour:
+https://internazional.github.io/lopburi-house-tour/
+
+All room photographs and exterior views:
+https://internazional.github.io/lopburi-house-tour/photos.html
+
+Continuous walking version:
+https://internazional.github.io/lopburi-house-tour/walk/
+
+Website repository:
+https://github.com/internazional/lopburi-house-tour
+
+The photo tour uses fixed Cycles-rendered panoramas. Dragging turns the view;
+doorway hotspots change to another panorama. The walking version loads the
+actual metric house model and allows continuous movement through doorways.
+These are separate presentations of the SAME saved Blender house.
+
+Local project root: C:\Codex Projects\Lopburi-House
+Editable Blender scene: output\house.blend
+Website Git checkout: output\github-pages
+Editable walking viewer: scripts\webwalk
+
+The website repository contains the deployable site, JPEG copies, GLB model,
+and navigation data. It does not contain the complete editable Blender scene,
+original PNG renders, or the original asset library. Cloning the website alone
+is sufficient to run the published views, but not to rebuild the Blender house.
+
+For Claude on the same Windows computer: open the local project folder.
+For Claude on another computer: transfer and extract the portable backup:
+output\handover\Lopburi-House-Claude-Handover-2026-10-11.zip
+
+The ZIP restores a top-level Lopburi-House folder, with the editable scene,
+original assets, source scripts, original renders, both local tours, and these
+instructions. Its HANDOVER_MANIFEST.json contains file sizes and SHA-256 hashes.
+It omits caches, installed node_modules, Git history, and the obsolete .blend1
+backup. Reinstall viewer dependencies with npm ci. The archive stays local.
+
+
+2. NON-NEGOTIABLE PROJECT CONSTRAINTS
+
+- Keep all work outside Astra. Do not use its folder as the working directory,
+  store house learning notes there, attach this work to its project, or publish
+  to an Astra repository. If a terminal starts there, explicitly change to the
+  separate house root before running house commands.
+- The original layout is final for this round. Do not move, resize, or improve
+  walls, rooms, doors, or windows without Christophe's explicit request.
+- brief.txt is the full original specification, including all coordinates,
+  furniture dimensions, finishes, roofs, site, and camera positions.
+- Keep the full-quality Blender source and original PNG renders. The browser
+  model and JPEGs are derived copies.
+- Use metre scale throughout. Room size labels must distinguish the supplied
+  wall-centreline plan areas from clear dimensions between finished wall faces.
+- Retain the workshop as its own removable collection; placement is provisional.
+- Preserve current working deliverables before running a script that overwrites
+  them. Do not reinstall a working Blender or change global Codex/Git settings.
+- Inspect existing configuration and source first. Make sensible routine choices
+  and continue independently within Christophe's requested change.
+- Do not read or copy credentials. Existing GitHub authentication is in the
+  computer's credential store; a restored ZIP contains no authentication.
+
+
+3. IMPORTANT FILES
+
+At the project root:
+  AGENTS.md / CLAUDE.md       Agent instructions and folder boundary.
+  brief.txt                  Complete original house brief; primary layout source.
+  README.txt                 Quick links and local entry points.
+  CLAUDE_HANDOVER.txt         This handover for both versions.
+
+Blender and render output:
+  output\house.blend         Current final source, 551,967,862 bytes.
+  output\shell.blend         Architecture-only intermediate scene.
+  output\plan_check.png      Final 4400 x 4000 orthographic plan.
+  output\clay_aerial.png     Geometry review view.
+  output\clay_cutaway.png    Geometry review view.
+  output\stills\*.png        15 original 1920 x 1080 Cycles room/entry views.
+  output\panos\*.png         12 original 4096 x 2048 equirectangular panoramas.
+  output\exterior_*.png      Two 1920 x 1080 exterior renders.
+  output\tour\               Local Pannellum tour of original PNG panoramas.
+  output\README.txt          Full scene decisions, asset credits, render timings.
+  output\geometry_audit.json Independent wall/opening and overlap check results.
+  output\geometry_manifest.json  Metric wall, room, opening, furniture registries.
+  output\render_times.json   Measured render times, sizes, and sample settings.
+  output\gpu.json            Recorded Blender and GPU backend.
+
+Blender/source generation:
+  assets\                    Original Poly Haven CC0 library and manifest.json.
+  scripts\fetch_assets.py    Downloads/checks the original asset library.
+  scripts\build.py           Recreates architecture, furniture, site, collections.
+  scripts\render.py          Sets cameras/lighting and renders saved scenes.
+  scripts\verify_scene.py    Independent geometry checks; writes metric manifest.
+  scripts\make_tour.py       Creates local panorama UI, hotspots, and credits.
+  scripts\summarize.py       Regenerates output\README.txt.
+  output\rebuild.ps1         Full original scene/render/tour rebuild wrapper.
+  output\open_tour.ps1       Starts local server and opens the photo tour/stills.
+
+Continuous walking version:
+  scripts\inspect_web_scene.py     Inventories the current saved Blender scene.
+  scripts\prepare_walk_textures.py Creates smaller derived textures using Pillow
+                                  and NumPy; refreshes machine-specific recipes.
+  scripts\export_walk_scene.py     Exports metric GLB and navigation/collision data.
+  scripts\webwalk\app.mjs          Three.js viewer, controls, plan, grid, room UI.
+  scripts\webwalk\navigation.mjs   Floor lookup and movement/collision logic.
+  scripts\webwalk\navigation.test.mjs  Six metric navigation tests.
+  scripts\webwalk\index.html       Editable walking interface.
+  scripts\webwalk\style.css        Responsive/mobile layout.
+  scripts\webwalk\build.mjs        Bundles viewer into the website's walk folder.
+  scripts\webwalk\package*.json    Pinned dependencies and lockfile.
+  assets\webwalk\                 Derived textures, recipes, and Draco license.
+  scripts\package_house_web.py     Creates web JPEG copies and both tours' links.
+  output\rebuild_walk.ps1          Rebuilds walking model/viewer/site locally.
+  output\github-pages\walk\house.glb        Published compressed 3D model.
+  output\github-pages\walk\navigation.json  Metric navigation and room data.
+  output\walk_export_report.json       Export statistics and source preservation.
+  output\walk_deployment_validation.json  Historical publication/QA receipt.
+  output\walkthrough-mobile.jpg         Screenshot from public browser QA.
+  output\WALKTHROUGH.txt                Walking controls, scale, rebuild notes.
+
+The six original scripts (build, render, verify_scene, fetch_assets, make_tour,
+summarize) exist in BOTH scripts\ and output\. These copies currently match.
+The original rebuild wrapper executes the copies in output\. When changing
+these scripts, keep the two copies in sync or explicitly run the edited source.
+The web scripts use scripts\ as their source and have no mirrored output copy.
+
+refine_scene.py, refine_assets.py, and finalize_landscape.py are historical
+one-off repair scripts. Their final decisions are already in build.py and the
+saved scene. Do not run them blindly again; some adjustments are additive.
+
+
+4. SCENE SCALE AND COMPLETED DECISIONS
+
+The brief's plan coordinates are x east, y south, with z as height. Blender
+maps these to (x, -y, z). Exported browser geometry is X east, Y up, Z south.
+One Blender/web unit equals one metre. The main house occupies x 6-15,
+plan y 7.8-21.6, with the attached Thai kitchen to the west.
+
+Floor levels: main house and connector 0.00 m; garden -0.45 m; new carport
+-0.35 m. Main ceilings are 2.80 m. Thai kitchen has no horizontal ceiling.
+
+The source contains 3,776 objects and 105 packed images at this baseline;
+no missing referenced textures were reported. Collections group the site,
+existing house, walls, floors, roofs, room furniture, lights, and cameras.
+
+Completed compromises to preserve rather than silently redesign:
+- Wardrobe is 0.55 m deep and 2.20 m high, shifted 2 cm west to avoid the inner
+  wall face: x 9.18-9.73 rather than ending at x 9.75.
+- Six dining chairs are arranged three along each long side to keep access clear.
+- Internal/kitchen door hinges were chosen to clear the fixed furniture.
+- The required gaming camera cannot show sofa, TV, and east-wall desk together
+  at the fixed angle. The required view is retained; an extra reverse still
+  shows the desk. Extra bathroom/kitchen overview photographs also exist.
+- The 35 cm entry difference uses an intermediate tread: two 17.5 cm risers.
+- Existing mum's house is context geometry; its interior layout is unspecified
+  and not furnished. Some facade details are illustrative.
+- Workshop is provisional and removable. Roof/waterproofing/structural details
+  that were not supplied are visual modelling decisions, not resolved designs.
+- Panorama viewpoints use supplied geometric centres at 1.60 m eye height;
+  living/kitchen centres lie over sofa/worktable footprints. Walking room starts
+  deliberately use different clear positions so the player is not inside furniture.
+
+Style: modern tropical Thai; warm white walls, oak/teak, black window frames,
+terracotta roofs, planting, warm interior light, darker gaming room with RGB.
+Assets are from Poly Haven, CC0, at 2K, downloaded/checksummed via its API.
+See assets\manifest.json and output\README.txt for exact asset provenance and
+the full list of self-modelled furniture, fixtures, architecture, and site items.
+
+Original final renders used Blender 5.2.2 LTS, Cycles OPTIX, RTX 5080,
+AgX and denoising: 256 maximum samples for stills/exteriors and 128 for panos.
+Renderer has GPU backend detection and CPU sample reductions.
+Measured final image render time was 13.21 minutes total; this excludes scene
+build, downloading, QA, and saves. It is an observation on this computer.
+
+
+5. RENDERED PHOTO/360 TOUR — CONTINUE OR REBUILD
+
+Installed runtime on the original Windows computer:
+  Blender: C:\Program Files\Blender Foundation\Blender 5.2\blender.exe
+  Bundled Python with Pillow/NumPy:
+  C:\Users\Christophe\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe
+  Node: v24.12.0 at time of implementation; npm is available.
+
+On another computer, locate installed tools rather than assuming these paths.
+The Blender scene uses packed textures; rebuilding from source also needs the
+included original asset library. Update wrapper executable paths as necessary.
+Web texture preparation/packaging needs Python with Pillow and NumPy. Install
+those in a project environment if the restored computer does not have them.
+
+Every example below is PowerShell, from the house root:
+
+  Set-Location -LiteralPath 'C:\Codex Projects\Lopburi-House'
+  $blenderExe = 'C:\Program Files\Blender Foundation\Blender 5.2\blender.exe'
+  $pythonExe = 'C:\Users\Christophe\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe'
+
+To edit the existing house, OPEN output\house.blend; do not run build.py first.
+The full rebuild generates a new scene and overwrites any manual scene edits.
+Back up the current .blend and affected images before rebuilding or rerendering.
+
+Check the saved scene and refresh its geometry manifest:
+  & $blenderExe -b -t 8 --python-exit-code 1 -P .\scripts\verify_scene.py
+
+The verifier writes a report; inspect it rather than treating a process exit
+code alone as evidence. Require wall_and_opening_table_pass = true, empty
+furniture_wall_bbox_overlaps/open_door_leaf_bbox_overlaps, and no missing textures.
+If an authorized layout change is made, update the independent reference only
+to match that explicit new brief; never relax the audit to hide a mismatch.
+
+Rerender only the living room photograph from the current saved scene:
+  & $blenderExe -b -t 8 --python-exit-code 1 -P .\scripts\render.py -- --mode stills --names living
+
+Rerender selected panoramas:
+  & $blenderExe -b -t 8 --python-exit-code 1 -P .\scripts\render.py -- --mode panos --names 'living,bedroom'
+
+Rerender the complete plan, clay views, stills, exteriors, and panos:
+  & $blenderExe -b -t 8 --python-exit-code 1 -P .\scripts\render.py -- --mode all
+
+Important: render.py recreates its lights/cameras and saves/repacks house.blend
+after rendering. For custom camera or lighting edits, update the script or render
+directly in Blender so the helper does not replace those choices.
+
+After rendered images or panorama connections change:
+  & $pythonExe .\scripts\make_tour.py
+  & $pythonExe .\scripts\package_house_web.py
+
+For complete regeneration from the original procedural source:
+  powershell -ExecutionPolicy Bypass -File .\output\rebuild.ps1
+
+This downloads/checks assets, builds shell/full scenes, renders, audits, creates
+the local 360 tour, writes delivery notes, and opens the local tour/stills.
+It does NOT rebuild the walking GLB/viewer or publish GitHub Pages. Package the
+web copies and rebuild walking outputs separately when the house changes.
+
+Local original PNG tour (helper opens the browser and stills folder):
+  powershell -ExecutionPolicy Bypass -File .\output\open_tour.ps1
+
+
+6. CONTINUOUS WALKING VERSION — CONTINUE OR REBUILD
+
+This version uses Three.js 0.186.1, esbuild 0.25.12, and Draco-compressed GLB.
+Dependencies are pinned in the included lockfile. The public viewer is static
+and hosts its own model, textures, scripts, and Draco decoder; no backend/account
+is needed to view the house.
+
+Controls: phone left-thumb joystick moves; drag the rest of the view to look.
+Desktop WASD/arrows move; drag or optional mouse look changes direction.
+The live plan shows position/heading; 1 m grid adds metric floor squares.
+Room menu jumps to clear starts, but ordinary movement crosses doors continuously.
+
+Navigation baseline:
+  Eye height: 1.60 m above the current floor.
+  Body radius: 0.18 m (36 cm diameter).
+  Walking speed: 1.35 m/s.
+  Maximum step up: 0.20 m; the two 17.5 cm entrance steps are traversable.
+  Walls/windows/glass and furniture footprints block movement.
+  Movement is subdivided to avoid passing through thin walls on a long frame.
+
+Rooms display clear wall-face dimensions plus supplied gross plan areas.
+For example, living/dining clear dimensions are 8.80 x 4.68 m; its supplied
+wall-centreline plan area is 43.2 m2. Do not present those as identical measures.
+
+The viewer limits the field of view on the viewport's longer dimension to
+75 degrees to limit excessive wide-angle distortion. Perspective still affects apparent
+size; rely on the metric grid/dimensions and preserved scale to judge space.
+
+The web exporter opens the saved house.blend, changes only the export copy,
+holds closed exterior doors open, and never saves back to the Blender source.
+Its baseline model has 710,986 triangles, 19 mesh groups, 57 materials, 112
+metric wall pieces, 151 collision boxes, 34 floor records, and 11 tree proxies.
+GLB size: 6,825,912 bytes. Walls/openings are exempt from decimation.
+Furniture/decor detail, trees, tile meshes, textures, lighting, and reflections
+are simplified for real-time browser rendering; Cycles images remain the visual
+reference for finished appearance.
+
+Full walking rebuild, after saved scene/manifest changes:
+  & $blenderExe -b -t 8 --python-exit-code 1 -P .\scripts\verify_scene.py
+  powershell -ExecutionPolicy Bypass -File .\output\rebuild_walk.ps1
+
+Inspect geometry_audit.json before running the second command. The walking
+wrapper inventories the saved scene, prepares textures, exports GLB/navigation,
+runs npm ci/build/test, and packages the web JPEGs/tour. It does not publish.
+
+Viewer-only changes (no house geometry or materials changed):
+  Push-Location .\scripts\webwalk
+  npm ci --no-audit --no-fund
+  npm run build
+  npm test
+  Pop-Location
+
+Do not edit the generated walk\app.js as the primary source; change app.mjs,
+navigation.mjs, index.html, or style.css, then build. navigation.json and
+house.glb must stay in sync when geometry changes.
+
+Important dependency when editing furniture by hand:
+verify_scene.py reads persisted scene properties (rooms, input_walls, openings,
+furniture_registry, imported_asset_registry) into geometry_manifest.json.
+Some furniture collision boxes come from that registry, not fresh mesh bounds.
+Update the corresponding registry bounds when moving/resizing/adding furniture,
+then regenerate and test. New geometry must have appropriate metadata/names
+or exporter handling so it gets the intended wall, floor, or collision behavior.
+
+On another machine, rerun texture preparation through rebuild_walk.ps1: stored
+assets\webwalk\texture_recipes.json contains absolute paths from this computer.
+Do not reuse those paths without refreshing them. Verify scene image paths are
+resolved under the restored house folder when rebuilding.
+
+
+7. PREVIEW, PUBLISH, AND CHECK THE RIGHT REPOSITORY
+
+Serve the output folder locally (keeps both tour paths available):
+  python -m http.server 8765 --bind 127.0.0.1 --directory .\output
+
+Original PNG panorama tour:
+  http://127.0.0.1:8765/tour/index.html
+Website copy / gallery / walking viewer:
+  http://127.0.0.1:8765/github-pages/
+  http://127.0.0.1:8765/github-pages/photos.html
+  http://127.0.0.1:8765/github-pages/walk/
+
+Use an unused port if 8765 is already occupied; do not terminate an unrelated
+process. localhost links are for the host computer. Christophe can use the
+published HTTPS links directly on his phone.
+
+Website checkout: C:\Codex Projects\Lopburi-House\output\github-pages
+Expected remote: https://github.com/internazional/lopburi-house-tour.git
+Branch: main. GitHub Pages source: main, repository root (/), legacy build.
+
+Baseline feature commit verified live:
+c3c3a85243f9cb78d14b41f42eddedab2924205f
+"Add continuous mobile house walkthrough with metric navigation"
+The handover may add a documentation-only commit after that feature baseline.
+
+Before committing or publishing, inspect git status, git diff, and git remote
+in THAT checkout. No house commits belong in Astra. The project root itself is
+not the website Git checkout; the only Git working copy is output\github-pages.
+
+A restored ZIP omits .git. For future publishing, clone the website repository
+into a new empty folder, then overlay the saved website payload into that clone
+while preserving the clone's .git directory. Use that clone as the publishing
+checkout, or reconnect it to the output\github-pages location deliberately.
+
+Use existing authorized GitHub access. Review changes and publish only within
+Christophe's requested scope. Never add a credential to a command, file, or ZIP.
+This session used gh with the already signed-in internazional account.
+If the ordinary push cannot use that existing gh connection, this process-only
+helper avoids changing global credentials:
+  git -c credential.helper= -c 'credential.helper=!gh auth git-credential' push origin main
+
+After an authorized publish, wait for the Pages build to finish and confirm
+the deployed commit matches your intended SHA. Verify public URLs, images,
+model/navigation loading, and the rendered interface.
+
+scripts\validate_walk_public.py compares the latest commit's changed public
+files against git show HEAD bytes and confirms Pages status/source model hash.
+It writes output\walk_deployment_validation.json. Its browser/test descriptions
+are hard-coded historical notes; it does not rerun npm tests or browser QA.
+Do not use those strings as new proof after later changes. Preserve historical
+receipts or write a new dated receipt with what you actually checked.
+
+Git may normalize Windows CRLF to LF for publication. Compare public content
+to committed git show HEAD bytes, not blindly to working-copy bytes.
+
+
+8. BASELINE VERIFICATION AND REMAINING LIMITS
+
+Recorded and currently preserved source SHA-256:
+591b315d9b0ddb3de45a4d1fdb4078d03c6e693db50bd2597b4ba7465f2ca6aa
+
+Geometry audit passed all 11 main-house wall runs/19 openings, plus kitchen
+and workshop checks. Largest recorded wall error: 1.068115e-6 m, below the
+required 0.02 m tolerance. No conservative furniture/wall or open-door-leaf
+bounding-box overlaps and no missing referenced image textures were recorded.
+This is a visualisation audit, not a complete physical/structural assessment.
+
+Six navigation checks passed at the feature baseline:
+1. Every room start is clear at metric eye height.
+2. Long movement cannot tunnel through walls/windows.
+3. Continuous front-door crossing works.
+4. Ten internal/connector doorway routes admit the 36 cm player body.
+5. Two 17.5 cm entry steps work; the direct 45 cm slab edge is blocked.
+6. Large furniture footprints block movement.
+
+Browser QA at the feature baseline checked 12 room starts, keyboard/joystick
+front-door crossing, drag-look, control release, metre grid, live plan, and
+390 x 844 portrait / 844 x 390 landscape fit. Public tour-to-walk link and
+model rendering were checked. All 16 changed public feature files returned
+HTTP 200 and matched the committed bytes; GitHub Pages reported built.
+
+An actual phone hardware test was not performed. The in-app browser could not
+inject simultaneous two-finger touch. Separate movement/look pointer IDs are
+implemented, but physical two-thumb behavior remains a device test to perform.
+
+No future edit is automatically verified by these old reports. After a change,
+rerun the relevant geometry/navigation checks and inspect the affected views.
+Keep wall/opening accuracy, doorway access, metric size information, both
+tour entry points, mobile layout, and source preservation appropriate to the
+requested change. Describe remaining gaps plainly.
+
+
+9. BACKUP AND FIRST STEPS FOR CLAUDE
+
+To regenerate a portable local handover snapshot:
+  python .\scripts\package_claude_handover.py
+
+Archive output:
+  output\handover\Lopburi-House-Claude-Handover-2026-10-11.zip
+Validation receipt:
+  output\handover\handover_backup_validation.json
+
+The packager streams files, records their SHA-256 hashes, checks ZIP integrity,
+and confirms the source scene did not change during packaging. This is a
+snapshot; regenerate it after future edits if a fresh handover is needed.
+
+First read brief.txt, this handover, output\README.txt, and output\WALKTHROUGH.txt.
+Check the folder and website remote. Identify whether the next request concerns
+the saved scene, rendered images/panorama UI, the walking model, or viewer controls.
+Then make the smallest complete change, preserve the other working version,
+verify the affected behavior, and report the result to Christophe.
